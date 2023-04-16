@@ -1,6 +1,7 @@
 const express = require("express");
 const Users = require("./entities/users.js");
 const Messages = require("./entities/messages.js");
+const Friends = require("./entities/friends.js");
 
 function init(db) {
     const router = express.Router();
@@ -244,7 +245,7 @@ function init(db) {
         }
     })
 
-    // --------------- DELETE USER --------------
+    // --------------- DELETE MESSAGE --------------
     router.delete('/message/:message_id', async (req, res) => {
         const numRemoved = await messages.delete(req.params.message_id);
         try {
@@ -314,7 +315,25 @@ function init(db) {
             });
         }
     });
+	
+    /* ********************************************************************** */
+    /* *************************** Friends ********************************** */
+    /* ********************************************************************** */
 
+    // requêtes sur les amis (friends.js)
+    const friends = new Friends.default(db);
+
+    // --------------- ADD A FRIENDSHIP BETWEEN 2 USERS  --------------
+	
+    // --------------- GET ALL FRIENDS OF USER   --------------
+
+    // --------------- CHECK FRIENDSHIP BETWEEN 2 USERS   --------------
+
+	// --------------- DELETE FRIENDSHIP --------------
+	
+	
+	
+	
     return router;
 }
 
