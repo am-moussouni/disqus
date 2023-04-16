@@ -329,7 +329,7 @@ function init(db) {
 
     // --------------- CHECK FRIENDSHIP BETWEEN 2 USERS   --------------
 
-	// --------------- DELETE FRIENDSHIP --------------
+    // --------------- DELETE FRIENDSHIP --------------
 	
 	
 	
